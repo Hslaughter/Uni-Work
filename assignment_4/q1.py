@@ -22,5 +22,14 @@
 
 # 7 + 8 + 7 x 8 = 71
 
-def print_equation():
-    pass
+def print_equation(startNumber, endNumber):
+    while startNumber <= endNumber: # set loop to only finish when start is <= end
+        increment = startNumber + 1 # create variable to make fstring more legible
+        product = startNumber + increment + startNumber * increment # create variable for similar purpose as increment
+        print(f"{startNumber} + {increment} + {startNumber} x {increment} = {product} ") # use fstring to display result
+        startNumber += 1 # increment start_number by 1
+ 
+
+
+
+print_equation(startNumber=10, endNumber=13)
