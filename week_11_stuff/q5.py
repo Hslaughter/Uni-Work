@@ -29,10 +29,12 @@ userinp = input("Please enter italian: ").lower()
 result=""
 while True:
     hyphen = userinp.find("-") # due-zero-due-sei
-    if hyphen == -1: # due
+    if hyphen == -1: # sei
         result += italian.get(userinp)
+        break
     else:
         first = userinp[:hyphen] # due
         result += italian.get(first)
         second = userinp[hyphen+1:] # zero-due-sei
         userinp = second
+print(f"You have entered: {result}")
