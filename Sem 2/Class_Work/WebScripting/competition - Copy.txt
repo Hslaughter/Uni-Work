@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Programming exercise</title>
+</head>
+<body>
+
+<h1>Harry Butcher, SN: 9904888</h1>
+<text>
+    <font color="orange" size="6">World</font>
+    <font color="Blue" size="6">Gurning</font>
+    <font color="purple" size="6">Competition</font>
+    <font size ="6">&#128518;</font>
+</text>
+
+</body>
+    <table border="0">
+        <tr>
+            <th align="right">Ranking</th>
+            <th align="center">Team</th>
+            <th align="left">Members</th>
+        </tr>
+        <tr>
+            <td align="right">1st</td>
+            <td align="center"><a href="http://didd.gov" target="_blank">Kingdom of Didd</a> <br/>
+                <img width=300 height=150 src="https://i.redd.it/ya8qikz9kn0f1.png"></td>
+            <td align="left">
+                <ul >
+                    <li ><b>Thing 1</b> <i>(team leader)</i></li>
+                    <li>North-Going Zax</li>
+                    <li>McMonkey McBean</li>
+                    <li>Vlad Vlad-i-Koff</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">2nd</td>
+            <td align="center"><a href="http://binn.gov" target="_blank">Kingdom of Binn</a> <br/>
+            <img width=300 height=150 src="https://i.pinimg.com/736x/3f/78/d2/3f78d295d8fcaef7e2da2874529ab42f.jpg"</td>
+            <td align="left">
+                <ul>
+                   <li><b>Thing 2</b> <i>(team leader)</i></li>
+                    <li>South-Going Zax</li>
+                    <li>The Grinch</li>
+                    <li>Bartholomew Cubbins</li>
+                    <li>Fizza-ma Wizza-ma Dill</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">3rd</td>
+            <td align="center"><a href="http://didd.gov" target="_blank">Kingdom of Catt</a> <br/>
+                <img width=300 height=150 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSnJJu0RfOQfvdN9xD7oZqUzEO8NeZkMb70DxtKxEmBrSXckPS5weAseE&s=10"></td>
+            <td align="left">
+                <ul >
+                    <li ><b>Thing 3</b> <i>(team leader)</i></li>
+                    <li>West-Going Cat</li>
+                    <li>McMeow McBell</li>
+                    <li>Lord Meowington</li>
+                </ul>
+            </td>
+        </tr>
+
+
+
+    </table>
+</html>
