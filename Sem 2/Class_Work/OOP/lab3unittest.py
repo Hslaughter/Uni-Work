@@ -1,4 +1,4 @@
-from lab3 import note, notebook
+from lab5 import note, notebook
 import unittest
 
 class BaseTestCase(unittest.TestCase):
