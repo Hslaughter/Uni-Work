@@ -4,8 +4,8 @@ import unittest
 class Base_Test_Class(unittest.TestCase):
     def setUp(self):
         self.sys = System()
-        s1 = Staff(1, 'harry', "16-12-2002", "Waterloo", "911-000")
-        s2 = Staff(2, 'barry', "15-12-2002", "Wollongong", "911-000-111")
+        s1 = Academic(1, 'harry', "16-12-2002", "Waterloo", "911-000", 'lecturer', 'comp-sci', 'quantum computing')
+        s2 = Professional(2, 'barry', "15-12-2002", "Wollongong", "911-000-111", 'coordinator', 'monday, wednesday')
         self.sys.addStaff(s1)
         self.sys.addStaff(s2)
         
@@ -18,7 +18,7 @@ class Base_Test_Class(unittest.TestCase):
         self.assertIsNone(test2)
 
     def test_add_staff(self):
-        s3 = Staff(3, 'garry', "14-12-2002", "Wollongong", "911-000-111")
+        s3 = Manager(3, 'garry', "14-12-2002", "Wollongong", "911-000-111", 'IT')
         result = self.sys.addStaff(s3)
         self.assertTrue(result)
 

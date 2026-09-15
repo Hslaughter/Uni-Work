@@ -1,3 +1,5 @@
+from abc import *
+
 class System:
     def __init__(self):
         self.staffMems = []
@@ -38,13 +40,24 @@ class System:
             success = target.updAttr(attr, val)
             if success:
                 print("Successfully Updated")
-                return True
             else:
                 return False
+        return True
 
-class Staff:
-    def __init__(self, staffId, name, dob, address, mobNum):
+class Staff(ABC):
+    def __init__(self, staffId):
         self.staffId = staffId
+
+    @abstractmethod
+    def displayProfile(self):
+        print(f"Staff Id: {self.staffId} ")
+        print(f"Name: {self.name} ")
+        print(f"Date of birth: {self.dob} ")
+        print(f"Address: {self.address} ")
+        print(f"Mobile Phone Number: {self.mobNum} ")
+        
+class People:
+    def __init__(self, name, dob, address, mobNum):
         self.name = name
         self.dob = dob
         self.address = address
@@ -56,16 +69,10 @@ class Staff:
         setattr(self, attr, val)
         return True
 
-    def displayProfile(self):
-        print(f"Staff Id: {self.staffId} ")
-        print(f"Name: {self.name} ")
-        print(f"Date of birth: {self.dob} ")
-        print(f"Address: {self.address} ")
-        print(f"Mobile Phone Number: {self.mobNum} ")
-
-class Professional(Staff):
+class Professional(Staff, People):
     def __init__(self, staffId, name, dob, address, mobNum, profPosition, workDays):
-        super().__init__(staffId, name, dob, address, mobNum)
+        Staff.__init__(self, staffId)
+        People.__init__(self, name, dob, address, mobNum)
         self.profPosition = profPosition
         self.workDays = workDays
 
@@ -74,9 +81,10 @@ class Professional(Staff):
         print(f"Professional Position: {self.profPosition} ")
         print(f"Workdays: {self.workDays}")
 
-class Academic(Staff):
+class Academic(Staff, People):
     def __init__(self, staffId, name, dob, address, mobNum, acaPosition, teachArea, researchArea):
-        super().__init__(staffId, name, dob, address, mobNum)
+        Staff.__init__(self, staffId)
+        People.__init__(self, name, dob, address, mobNum)
         self.acaPostion = acaPosition
         self.teachArea = teachArea
         self.researchArea = researchArea
@@ -86,6 +94,16 @@ class Academic(Staff):
         print(f"Academic Position: {self.acaPostion} ")
         print(f"Teaching Area: {self.teachArea} ")
         print(f"Research Area: {self.researchArea} ")
+
+class Manager(Staff, People):
+    def __init__(self, staffId, name, dob, address, mobNum, department):
+        Staff.__init__(self, staffId)
+        People.__init__(self, name, dob, address, mobNum)
+        self.department = department
+
+    def displayProfile(self):
+        super().displayProfile()
+        print(f"Department: {self.department}")
 
 class Address:
     def __init__(self, streetNo, streetName, city, state, postcode, country):
