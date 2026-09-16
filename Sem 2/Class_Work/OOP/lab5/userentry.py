@@ -61,9 +61,57 @@ while True:
                 except ValueError:
                     print("That is not a valid input")
         
-
-
             elif syschoice == 2:
-                ...
+                try:
+                    choice = int(input("Welcome to the Staff System, Please select from the following:\n1. Add Staff\n2. Search Staff\n3. Edit Staff\n4. Delete Staff\n5. Exit\n"))
+                    if choice == 1:
+                        print("Please Enter some information about the staff member you are going to add: ")
+                        name = input("Name: ")
+                        dob = input("Dob: ")
+                        address = input("Address: ")
+                        mobNum = input("Mobile Number: ")
+                        role = input("What role is the staff member? Professional/Academic/Manager (Enter P/A/M): ").lower().strip()
+                        if role == 'p':
+                            pos = input("What is the staff members professional position?: ")
+                            workDays = input("What days are they available to work?: ")
+                            p1 = Professional(sys.getId(), name, dob, address, mobNum, pos, workDays)
+                            p1.displayProfile()
+                            sys.addStaff(p1)
+                        elif role == 'a':
+                            aca = input("What is their academic position?: ")
+                            teach = input("What is their teaching area?: ")
+                            research = input("What is their research area?: ")
+                            a1 = Academic(sys.getId(), name, dob, address, mobNum, aca, teach, research)
+                            a1.displayProfile()
+                            sys.addStaff(a1)
+                        elif role == "m":
+                            dep = input("What is their department?: ")
+                            m1 = Manager(sys.getId(), name, dob, address, mobNum, dep)
+                            m1.displayProfile()
+                            sys.addStaff(m1)
+                    elif choice == 2:
+                        target = input("Enter the staff ID you would like to search for: ")
+                        x = sys.searchStaff(target)
+                        if x == None:
+                            print("Does not exist.")
+                        x.displayProfile()
+                    elif choice == 3:
+                        search = int(input("Please enter the Id of the note you would like to edit: "))
+                        success = sys.searchById(search)
+                        if success == None:
+                            print("No such Staff Member exists")
+                        success.displayProfile()
+                        attr = input("Which attribute would you like to edit?: ")
+                        val = input("What is the new value you would like to assign to this attribute?")
+                        updates = {attr: val}
+                        sys.editStaff(target, updates)
+                    elif choice == 4:
+                        target = input("Enter the staff ID you would like to delete: ")
+                        x = sys.searchStaff(target)
+                        sys.delStaff(x.staffId)
+                    elif choice == 5:
+                        break   
+                except ValueError:
+                    print("Please enter a valid input")
             elif syschoice == 3:
                 exit()

@@ -1,8 +1,13 @@
 from abc import *
+import time
 
 class System:
     def __init__(self):
         self.staffMems = []
+        self.nextStaffId = 1
+
+    def getId(self):
+        return self.nextStaffId
 
     def searchStaff(self, staffId):
         for staff in self.staffMems:
@@ -14,6 +19,7 @@ class System:
         check = self.searchStaff(staff.staffId)
         if check == None:
             self.staffMems.append(staff)
+            self.nextStaffId += 1
             return True
         else:
             print("Staff Member exists already")
@@ -30,6 +36,10 @@ class System:
                 self.staffMems.remove(target)
                 print("Deleted")
                 return True
+            elif choice == 'n':
+                print("Returning to menu..")
+                time.sleep(3)
+                return False
 
     def editStaff(self, staffId, updates : dict):
         target = self.searchStaff(staffId)
@@ -37,6 +47,9 @@ class System:
             print(f"Staff with Id: {staffId} does not exist")
             return False
         for attr, val in updates.items():
+            if attr == 'staffId':
+                print("Cannot edit staff ID")
+                continue
             success = target.updAttr(attr, val)
             if success:
                 print("Successfully Updated")
