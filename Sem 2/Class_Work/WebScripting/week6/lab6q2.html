@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ebay search</title>    
+    <style>
+        .check{
+            display: flex;
+            flex-direction: column;
+        }
+
+    </style>
+    </head>
+<body>
+    <h1>Ebay Search</h1>
+    <form action="https://www.ebay.com.au/sch/i.html"  method="get">
+    <div class="search">
+        <label>Keyword:  <input id="search" type="text" name="_nkw"></label>
+    </div>
+    <div class="check">
+        <label><input id="art" type="radio" name="_sacat" value="550">Art</label>
+        <label><input id="book" type="radio" name="_sacat" value="267">Book and magazine</label>
+        <label><input id="coins" type="radio" name="_sacat" value="11116">Coins</label>
+        <label><input id="music" type="radio" name="_sacat" value="11233">Music</label>
+        <label><input id="stamps" type="radio" name="_sacat" value="260">Stamps</label>
+        <label><input id="all" type="radio" name="_sacat" value="0">All Categories</label>
+    </div>
+    <div class="button">
+    </br> <button type="submit">Submit</button>
+
+    </div>
+    </form>
+</body>
+
+
+</html>

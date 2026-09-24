@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <title>Lab 6 Work</title>
+    <style>
+        input[type="text"]{
+            width: 300px    ;
+            margin: right;
+        }
+
+        .field{
+            display: grid;
+            grid-template-columns: 80px 1fr ;
+        }
+
+        .checkboxes {
+            display: flex;
+            flex-direction: column;
+            text-indent: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Whosville Library Book Search</h1>
+    <form action="http://library.whosville/bsearch" method="get">
+        
+            <div class="textinp">
+                <label for="author">Author Name:</label>
+                <input type="text"id="author" name="author"><br/><br/>
+                <label for="publication">Publication year:</label>
+                <input type="text"id="publication" name="year"><br/><br/>
+            </div>
+                
+            <div class="field">
+                <label for="subject">Subject:</label>
+            </div>
+            <div class="checkboxes">
+                <label><input type="checkbox" id="math" name="sub" value="math">Mathematics</label>
+                <label><input type="checkbox" id="cs" name="sub" value="cs">Computer Science</label>
+                <label><input type="checkbox" id="bio" name="sub" value="bio">Biology</label>
+                <label><input type="checkbox" id="phys" name="sub" value="phys">Physics</label>
+                <label><input type="checkbox" id="chem" name="sub" value="chem">Chemistry</label>
+            </div>
+                <button type="submit">Search</button>
+                <button type="reset">Clear</button>
+            
+            
+            <p>
+
+            </p>
+    </form>
+</body>
+
+  
+</html>
