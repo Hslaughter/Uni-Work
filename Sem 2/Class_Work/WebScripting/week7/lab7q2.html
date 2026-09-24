@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .numbers{
+                display: flex;
+                flex-direction: row;
+                row-gap: 6px;
+                height: 40px;
+            }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <h1>Select</h1>
+        <form id="lab7-2">
+        <div class="numbers">
+            <input id="firstnum" type="number">
+            <select id="operator" name="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="/">/</option>
+                <option value="*">*</option>
+            </select>
+            <input id="secnum" type="number">
+            <p>=</p>
+            <input id="thirdnum" type="number">
+            <button type="submit">Check</button>
+            <div id="msg"></div>
+        </div>
+        
+        </form>
+
+        <script src="script2.js"></script>
+    </body>
+</html>
